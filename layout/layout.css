@@ -3,12 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura */
+ 
 }
 
 body {
     font-family: "Roboto Mono", monospace;
     display: flex;
     flex-direction: column;
+    
 }
 
 header {
@@ -53,6 +55,7 @@ main {
         "a d e i j"
         "a h e f f";
     gap: 1em;
+    
 }
 
 nav.menu { grid-area: a; }
@@ -95,7 +98,7 @@ div#henrique { grid-area: j; }
     font-size: 19px;
     width: 80px;
     color: rgba(7, 103, 125, 0.737);
-    box-sizing: border-box;
+   
 }
 
 .programacao h2 {
@@ -167,13 +170,12 @@ div#henrique { grid-area: j; }
     background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
-    filter:grayscale(100%);
+    filter:grayscale(100%);/* Filtrar a imagem */
     display: flex; /* Usar Flexbox para centralizar o conteúdo */
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
     width: 100%; /* Garante que o elemento ocupe 100% da largura do elemento pai */
-    text-align: center; /* Centraliza o texto */
-    box-sizing: border-box;
+    text-align: center;    
     position: relative; /* Permite posicionar elementos filhos relativamente */
 }
 
@@ -202,24 +204,18 @@ div#henrique { grid-area: j; }
     color: white; /* Cor do texto */
     margin: 0; /* Remove margens */
     height: 50px;
-    width: 100%; /* Faz com que o parágrafo ocupe toda a largura do elemento pai */
-    box-sizing: border-box;
+    width: 100%; /* Faz com que o parágrafo ocupe toda a largura do elemento pai */  
     position: absolute; /* Faz o parágrafo ocupar toda a largura do elemento pai */
 }
 
 .footer {
-    background-color: #224459;
-    height: 250px;
+    background-color: #224459;    
     align-items: center;
     color: white;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 50px;   
     width: 100%;
-    bottom: 0;
-    position: fixed;
+    margin-top: 1em;    
+  
 }
 
-.footer p {
-    margin-top: 100px;
-}
