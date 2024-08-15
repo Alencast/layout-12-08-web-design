@@ -1,19 +1,225 @@
-*{
-    margin:0;
-    padding:0;
-}
-body{
-    font-family: 'Roboto Mono', monospace;
-}
-
-header{
-    color:white;
-    background: linear-gradient(to left,#7292A6, #224459 );
-    position:fixed;  
-    width:100%;      
+/* Resetando margens e padding globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura */
 }
 
-h1{
-    margin:1em;
+body {
+    font-family: "Roboto Mono", monospace;
+    display: flex;
+    flex-direction: column;
 }
 
+header {
+    color: white;
+    background: linear-gradient(to left, #7292a6, #224459);
+}
+
+h1 {
+    margin: 1em;
+}
+
+.menu {
+    background-color: #d0e5ea;
+    padding: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul li {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 40px;
+    color: rgba(7, 103, 125, 0.737);
+}
+
+main {
+    margin-top: 1em;
+    display: grid; /* Deve ser aplicado ao elemento pai */
+    grid-template-columns: 0.7fr 0.7fr 1fr 0.7fr 0.7fr; /* Define a largura das colunas, fr = fração */
+    grid-template-rows: 15em 15em 15em; /* Define a altura das linhas */
+    grid-template-areas:
+        "a b c c g"
+        "a d e i j"
+        "a h e f f";
+    gap: 1em;
+}
+
+nav.menu { grid-area: a; }
+div.box { grid-area: b; }
+div.programacao { grid-area: c; }
+div.atividades { grid-area: d; }
+div.inscricao { grid-area: e; }
+div.organizacao { grid-area: f; }
+div#amanda { grid-area: g; }
+div#ellen { grid-area: h; }
+div#georgia { grid-area: i; }
+div#henrique { grid-area: j; }
+
+.box,
+.programacao,
+.atividades,
+.inscricao,
+.organizacao,
+.palestrante {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.box {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p {
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.box input {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 19px;
+    width: 80px;
+    color: rgba(7, 103, 125, 0.737);
+    box-sizing: border-box;
+}
+
+.programacao h2 {
+    margin-bottom: 30px;
+}
+
+.programacao table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.programacao table th,
+.programacao table td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: left;
+}
+
+.atividades ul li {
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.inscricao form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inscricao h2 {
+    margin-bottom: 30px;
+}
+
+.inscricao form input,
+.inscricao form button {
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Cor e espessura padrão da borda */
+    border-left: 3px solid #454747bf;
+    border-top: 2px solid #454747bf;
+    border-bottom: 2px solid #454747bf;
+    border-right: 1px solid #454747bf;
+}
+
+.inscricao form button {
+    color: rgba(255, 255, 255, 0.611);
+    background-color: rgb(46, 45, 45);
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 250px; /* Define a largura desejada do botão */
+    padding: 10px;
+    display: block; /* Faz o botão se comportar como um bloco para centralização */
+}
+
+.organizacao {
+    padding: 40px;
+}
+
+.organizacao ul li {
+    margin: 10px;
+}
+
+.organizacao h2 {
+    margin-bottom: 30px;
+}
+
+#amanda,
+#ellen,
+#georgia,
+#henrique {
+    background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    filter:grayscale(100%);
+    display: flex; /* Usar Flexbox para centralizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* Garante que o elemento ocupe 100% da largura do elemento pai */
+    text-align: center; /* Centraliza o texto */
+    box-sizing: border-box;
+    position: relative; /* Permite posicionar elementos filhos relativamente */
+}
+
+#amanda {
+    background-image: url("/palestrantes/amanda.jpg");
+}
+
+#ellen {
+    background-image: url("/palestrantes/ellen.jpg");
+}
+
+#georgia {
+    background-image: url("/palestrantes/georgia.jpg");
+}
+
+#henrique {
+    background-image: url("/palestrantes/henrique.jpg");
+}
+
+#amanda p,
+#ellen p,
+#georgia p,
+#henrique p {
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+    padding: 10px; /* Adiciona um pouco de espaçamento ao redor do texto */
+    color: white; /* Cor do texto */
+    margin: 0; /* Remove margens */
+    height: 50px;
+    width: 100%; /* Faz com que o parágrafo ocupe toda a largura do elemento pai */
+    box-sizing: border-box;
+    position: absolute; /* Faz o parágrafo ocupar toda a largura do elemento pai */
+}
+
+.footer {
+    background-color: #224459;
+    height: 250px;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+.footer p {
+    margin-top: 100px;
+}
